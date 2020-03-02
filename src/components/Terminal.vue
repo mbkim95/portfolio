@@ -8,8 +8,18 @@
       <span>:</span>
       <span style="color: #729FCF">~</span>
       <span class="mr-2">$</span>
-      <span>{{ terminalText }}</span>
-      <span class="ml-1">{{ cursor }}</span>
+      <div style="display: inline;">
+        <!-- type pausing -->
+        <vue-typed-js class="typing"
+          :loop="true"
+          :strings="[
+            'Hello! ^1000 Welcome to my page.^1000',
+            'Please click the Menu Icon.^1500'
+          ]"
+        >
+          <span class="typing"></span>
+        </vue-typed-js>
+      </div>
     </div>
   </div>
 </template>
@@ -19,10 +29,7 @@ export default {
   name: "Terminal",
   props: {},
   data() {
-    return {
-      terminalText: "Welcome To My HomePage",
-      cursor: "_"
-    };
+    return {};
   }
 };
 </script>
@@ -49,5 +56,9 @@ export default {
 
 .terminal #id {
   color: #8ae234;
+}
+
+.terminal .typing {
+  display: inline;
 }
 </style>
