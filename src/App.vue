@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Menu></Menu>
+    <Terminal></Terminal>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Menu from "./components/Menu.vue";
+import Terminal from "./components/Terminal.vue";
 
 export default {
   name: "App",
   components: {
-    Header
+    Menu, Terminal
   }
 };
 </script>
@@ -33,6 +35,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
+  background-size: cover;
+  background-image: url(assets/bg.jpg);
 }
 </style>
