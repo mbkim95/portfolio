@@ -1,6 +1,13 @@
 <template>
   <div class="terminal" id="page-wrapper">
-    <div id="window"></div>
+    <div id="window">
+      <div class="ml-2" style="position: absolute; left: 50px;">
+        Terminal
+      </div>
+      <div class="ml-2" style="position: absolute; right: 10px;">
+        {{ time }}
+      </div>
+    </div>
     <div class="text-left" id="content">
       <span class="ml-2" id="id">
         mbkim@github
@@ -10,7 +17,8 @@
       <span class="mr-2">$</span>
       <div style="display: inline;">
         <!-- type pausing -->
-        <vue-typed-js class="typing"
+        <vue-typed-js
+          class="typing"
           :loop="true"
           :strings="[
             'Hello! ^1000 Welcome to my page.^1000',
@@ -29,7 +37,39 @@ export default {
   name: "Terminal",
   props: {},
   data() {
-    return {};
+    return {
+      date: "",
+      time: ""
+    };
+  },
+  mounted() {
+    this.setClock();
+  },
+  methods: {
+    setClock() {
+      setInterval(() => {
+        this.getNow();
+      }, 1000);
+    },
+    getNow() {
+      const today = new Date();
+      const date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
+        const hour = this.timeFormatter(today.getHours());
+        const minutes = this.timeFormatter(today.getMinutes());
+        const seconds = this.timeFormatter(today.getSeconds());
+      const time =
+        hour + ":" + minutes + ":" + seconds;
+      const dateTime = date + " " + time;
+      this.time = dateTime;
+    },
+    timeFormatter(value){
+      return value < 10 ? '0' + value : value;
+    }
   }
 };
 </script>
