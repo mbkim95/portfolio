@@ -1,0 +1,17 @@
+@Fonts TmonMonsori License
+Copyright (c) 2016, TICKETMONSTER, Inc. (http://www.ticketmonster.co.kr),
+ 
+with Reserved Font Name TmonMonsori.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+SIL OPEN FONT LICENSE
+Version 1.1 - 26 February 2007
+
+@Fonts Tium License
+Copyright (c) 2014, TICKETMONSTER, Inc. (http://www.ticketmonster.co.kr),
+ 
+with Reserved Font Name Tium.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+SIL OPEN FONT LICENSE
+Version 1.1 - 26 February 2007
