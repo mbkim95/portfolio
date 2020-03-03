@@ -2,21 +2,24 @@
   <div id="app">
     <Menu></Menu>
     <status-bar></status-bar>
-    <Terminal id="terminal"></Terminal>
+    <!-- <Terminal id="terminal"></Terminal> -->
+    <About></About>
   </div>
 </template>
 
 <script>
 import Menu from "./components/Menu.vue";
 import StatusBar from "./components/StatusBar.vue";
-import Terminal from "./components/Terminal.vue";
+// import Terminal from "./components/Terminal.vue";
+import About from "./components/About.vue";
 
 export default {
   name: "App",
   components: {
     Menu,
     StatusBar,
-    Terminal
+    // Terminal,
+    About
   }
 };
 </script>
@@ -45,5 +48,6 @@ export default {
 }
 
 #terminal {
+  visibility: hidden;
 }
 </style>

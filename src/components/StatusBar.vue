@@ -58,10 +58,6 @@ export default {
   margin-left: 50px;
 }
 
-.statusBar {
-  /* height: 100vh; */
-}
-
 .statusBar #window {
   background-color: #4c4840;
   height: 25px;
