@@ -1,24 +1,34 @@
 <template>
   <div id="app">
-    <Menu></Menu>
-    <status-bar></status-bar>
-    <!-- <Terminal id="terminal"></Terminal> -->
-    <About></About>
+    <Menu @show-menu="chooseMenu"></Menu>
+    <status-bar :title="display"></status-bar>
+    <component :is="display"></component>
   </div>
 </template>
 
 <script>
 import Menu from "./components/Menu.vue";
 import StatusBar from "./components/StatusBar.vue";
-// import Terminal from "./components/Terminal.vue";
+import Terminal from "./components/Terminal.vue";
 import About from "./components/About.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      display: "Terminal"
+    };
+  },
+  methods: {
+    chooseMenu(menu) {
+      this.display = menu;
+      console.log(menu);
+    }
+  },
   components: {
     Menu,
     StatusBar,
-    // Terminal,
+    Terminal,
     About
   }
 };
@@ -48,6 +58,6 @@ export default {
 }
 
 #terminal {
-  visibility: hidden;
+  visibility: visible;
 }
 </style>

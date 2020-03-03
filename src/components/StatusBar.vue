@@ -2,7 +2,7 @@
   <div class="statusBar" id="page-wrapper">
     <div id="window">
       <div class="ml-2" style="position: absolute; left: 50px;">
-        Terminal
+        {{ title }}
       </div>
       <div class="ml-2" style="position: absolute; right: 10px;">
         {{ time }}
@@ -14,7 +14,7 @@
 <script>
 export default {
   name: "StatusBar",
-  props: {},
+  props: { title: String },
   data() {
     return {
       date: "",

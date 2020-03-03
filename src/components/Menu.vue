@@ -5,7 +5,7 @@
         <ul class="sidebar-nav">
           <li class="sidebar-brand" v-for="(menu, index) in menus" :key="index">
             <a href="#" :title="menu.value">
-              <img :src="menu.image" alt="" />
+              <img :src="menu.image" alt="" @click="sendMenu(menu.value)"/>
             </a>
           </li>
         </ul>
@@ -20,6 +20,7 @@ export default {
   props: {},
   data() {
     return {
+      currentMenu: "Terminal",
       menus: [
         {
           value: "Terminal",
@@ -39,6 +40,12 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    sendMenu(menu) {
+      console.log(menu);
+      this.$emit("show-menu", menu);
+    }
   }
 };
 </script>
