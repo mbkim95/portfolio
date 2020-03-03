@@ -5,7 +5,7 @@
         <ul class="sidebar-nav">
           <li class="sidebar-brand" v-for="(menu, index) in menus" :key="index">
             <a href="#" :title="menu.value">
-              <img :src="menu.image" alt=""/>
+              <img :src="menu.image" alt="" />
             </a>
           </li>
         </ul>
@@ -21,6 +21,10 @@ export default {
   data() {
     return {
       menus: [
+        {
+          value: "Terminal",
+          image: require("../assets/terminal.png")
+        },
         {
           value: "About",
           image: require("../assets/about.png")
@@ -74,7 +78,7 @@ export default {
   line-height: 3em;
 }
 
- .sidebar-nav li a img{
-   width: 35px;
- }
+.sidebar-nav li a img {
+  width: 35px;
+}
 </style>
