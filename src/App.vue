@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <Menu></Menu>
-    <Terminal></Terminal>
+    <status-bar></status-bar>
+    <Terminal id="terminal"></Terminal>
   </div>
 </template>
 
 <script>
 import Menu from "./components/Menu.vue";
+import StatusBar from "./components/StatusBar.vue";
 import Terminal from "./components/Terminal.vue";
 
 export default {
   name: "App",
   components: {
-    Menu, Terminal
+    Menu,
+    StatusBar,
+    Terminal
   }
 };
 </script>
@@ -38,5 +42,8 @@ export default {
   color: white;
   background-size: cover;
   background-image: url(assets/bg.jpg);
+}
+
+#terminal {
 }
 </style>
