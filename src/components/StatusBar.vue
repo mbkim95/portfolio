@@ -1,5 +1,5 @@
 <template>
-  <div class="statusBar" id="page-wrapper">
+  <div class="statusBar container-fluid px-0" id="page-wrapper">
     <div id="window">
       <div class="ml-2" style="position: absolute; left: 50px;">
         {{ title }}
