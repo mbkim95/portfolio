@@ -1,15 +1,25 @@
 <template>
   <div class="contact container-fluid px-0" id="page-wrapper">
     <div id="content" class="row mx-0">
-      <ul class="col-md-4 list-unstyled mx-auto my-auto p-0" id="window">
-        <li id="title">Contact</li>
-        <li class="mt-4 mb-4" v-for="(item, index) in information" :key="index">
-          <a :href="item.link" id="link">
-            <img :src="item.icon" alt="" id="icon" />
-            {{ item.value }}
-          </a>
-        </li>
-      </ul>
+      <transition name="fade">
+        <ul
+          v-if="show"
+          class="col-md-4 list-unstyled mx-auto my-auto p-0"
+          id="window"
+        >
+          <li id="title">Contact</li>
+          <li
+            class="mt-4 mb-4"
+            v-for="(item, index) in information"
+            :key="index"
+          >
+            <a :href="item.link" id="link">
+              <img :src="item.icon" alt="" id="icon" />
+              {{ item.value }}
+            </a>
+          </li>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
@@ -20,6 +30,7 @@ export default {
   props: {},
   data() {
     return {
+      show: false,
       information: [
         {
           key: "E-Mail",
@@ -48,8 +59,14 @@ export default {
       ]
     };
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.fadeMe();
+  },
+  methods: {    
+    fadeMe() {
+      this.show = !this.show;
+    }
+  }
 };
 </script>
 
@@ -80,8 +97,18 @@ export default {
   width: 35px;
 }
 
-li#title{
+li#title {
   color: white;
-  background-color: #4c4840;;
+  background-color: #4c4840;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
