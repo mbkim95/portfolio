@@ -1,27 +1,21 @@
 <template>
-  <div class="about container-fluid">
-    <div id="page-wrapper">
-      <div id="content" class="row">
-        <div class="col-lg-7 col-md-6 my-auto">
-          <img :src="profile" class="w-auto img-fluid image"/>
-          <h2>김민범</h2>
-          <h5>Kim Min Bum</h5>
-        </div>
-        <div class="col-lg-5 col-md-6 my-auto">
-          <div id="career" class="mt-2">&lt;Career></div>
-          <ul class="list-unstyled">
-            <li
-              class="mt-5 mb-5"
-              v-for="(career, index) in careers"
-              :key="index"
-            >
-              <h5>{{ career.name }}</h5>
-              <h6>{{ career.detail }}</h6>
-              <h6>{{ career.job }}</h6>
-              <h6>{{ career.date }}</h6>
-            </li>
-          </ul>
-        </div>
+  <div class="about container-fluid px-0" id="page-wrapper">
+    <div id="content" class="row mx-0">
+      <div class="col-lg-6 col-md-6 my-auto">
+        <img :src="profile" class="w-auto img-fluid image" />
+        <h2>김민범</h2>
+        <h5>Kim Min Bum</h5>
+      </div>
+      <div class="col-lg-6 col-md-6 my-auto">
+        <div id="career" class="mt-2">&lt;Career></div>
+        <ul class="list-unstyled">
+          <li class="mt-5 mb-5" v-for="(career, index) in careers" :key="index">
+            <h5>{{ career.name }}</h5>
+            <h6>{{ career.detail }}</h6>
+            <h6>{{ career.job }}</h6>
+            <h6>{{ career.date }}</h6>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -66,11 +60,13 @@ export default {
 #page-wrapper {
   color: rgb(100, 100, 100);
   margin-left: 50px;
+  width: calc(100vw - 50px);
 }
 
 .about #content {
   height: calc(100vh - 25px);
   background-color: rgb(242, 241, 240);
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
