@@ -1,6 +1,6 @@
 <template>
   <div class="statusBar container-fluid px-0" id="page-wrapper">
-    <div id="window">
+    <div class="row mx-0" id="window">
       <div class="ml-2" style="position: absolute; left: 50px;">
         {{ title }}
       </div>
@@ -56,6 +56,7 @@ export default {
 <style scoped>
 #page-wrapper {
   margin-left: 50px;
+  width: calc(100vw - 50px);
 }
 
 .statusBar #window {
