@@ -58,8 +58,4 @@ export default {
   background-size: cover;
   background-image: url(assets/bg.jpg);
 }
-
-#terminal {
-  visibility: visible;
-}
 </style>

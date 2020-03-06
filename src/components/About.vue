@@ -1,23 +1,31 @@
 <template>
   <div class="about container-fluid px-0" id="page-wrapper">
-    <div id="content" class="row mx-0">
-      <div class="col-lg-6 col-md-6 my-auto">
-        <img :src="profile" class="w-auto img-fluid image" />
-        <h2>김민범</h2>
-        <h5>Kim Min Bum</h5>
+    <transition name="fade">
+      <div id="content" class="row mx-0" v-if="show">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="col-lg-4 col-md-4 my-auto">
+          <img :src="profile" class="w-auto img-fluid image" />
+          <h2>김민범</h2>
+          <h5>Kim Min Bum</h5>
+        </div>
+        <div class="col-lg-4 col-md-4 my-auto">
+          <div id="career" class="mt-2">&lt;Career></div>
+          <ul class="list-unstyled">
+            <li
+              class="mt-5 mb-5"
+              v-for="(career, index) in careers"
+              :key="index"
+            >
+              <h5>{{ career.name }}</h5>
+              <h6>{{ career.detail }}</h6>
+              <h6>{{ career.job }}</h6>
+              <h6>{{ career.date }}</h6>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
       </div>
-      <div class="col-lg-6 col-md-6 my-auto">
-        <div id="career" class="mt-2">&lt;Career></div>
-        <ul class="list-unstyled">
-          <li class="mt-5 mb-5" v-for="(career, index) in careers" :key="index">
-            <h5>{{ career.name }}</h5>
-            <h6>{{ career.detail }}</h6>
-            <h6>{{ career.job }}</h6>
-            <h6>{{ career.date }}</h6>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -27,6 +35,7 @@ export default {
   props: {},
   data() {
     return {
+      show: false,
       profile: require("../assets/profile.png"),
       careers: [
         {
@@ -50,8 +59,14 @@ export default {
       ]
     };
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.display();
+  },
+  methods: {
+    display() {
+      this.show = true;
+    }
+  }
 };
 </script>
 
@@ -72,5 +87,26 @@ export default {
 
 #career {
   font-size: 2em;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+  animation: scale-up 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

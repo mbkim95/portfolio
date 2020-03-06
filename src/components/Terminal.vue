@@ -1,28 +1,30 @@
 <template>
   <div class="terminal">
-    <div id="page-wrapper">
-      <div class="text-left" id="content">
-        <span class="ml-2" id="id">
-          mbkim@github
-        </span>
-        <span>:</span>
-        <span style="color: #729FCF">~</span>
-        <span class="mr-2">$</span>
-        <div style="display: inline;">
-          <!-- type pausing -->
-          <vue-typed-js
-            class="typing"
-            :loop="true"
-            :strings="[
-              'Hello! ^1000 Welcome to my page.^1000',
-              'Please click the Menu Icon.^1500'
-            ]"
-          >
-            <span class="typing"></span>
-          </vue-typed-js>
+    <transition name="fade">
+      <div id="page-wrapper" v-if="show">
+        <div class="text-left" id="content">
+          <span class="ml-2" id="id">
+            mbkim@github
+          </span>
+          <span>:</span>
+          <span style="color: #729FCF">~</span>
+          <span class="mr-2">$</span>
+          <div style="display: inline;">
+            <!-- type pausing -->
+            <vue-typed-js
+              class="typing"
+              :loop="true"
+              :strings="[
+                '^1500Hello! ^1000 Welcome to my page.^1000',
+                'Please click the Menu Icon.'
+              ]"
+            >
+              <span class="typing"></span>
+            </vue-typed-js>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -31,10 +33,18 @@ export default {
   name: "Terminal",
   props: {},
   data() {
-    return {};
+    return {
+      show: false
+    };
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.display();
+  },
+  methods: {
+    display() {
+      this.show = true;
+    }
+  }
 };
 </script>
 
@@ -56,4 +66,25 @@ export default {
 .terminal .typing {
   display: inline;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+  animation: scale-up 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes scale-up {
+  0%{
+    transform: scale(0.6);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+} 
 </style>

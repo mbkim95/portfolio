@@ -41,7 +41,6 @@ export default {
   },
   methods: {
     sendMenu(menu) {
-      console.log(menu);
       this.$emit("show-menu", menu);
     }
   }

@@ -60,11 +60,11 @@ export default {
     };
   },
   mounted() {
-    this.fadeMe();
+    this.display();
   },
   methods: {    
-    fadeMe() {
-      this.show = !this.show;
+    display() {
+      this.show = true;
     }
   }
 };
@@ -104,11 +104,22 @@ li#title {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 2s;
+  transition: opacity 1s;
+  animation: scale-up 0.5s;
 }
 
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
+
+@keyframes scale-up {
+  0%{
+    transform: scale(0.6);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+} 
 </style>
