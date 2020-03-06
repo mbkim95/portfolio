@@ -11,6 +11,7 @@ import Menu from "./components/Menu.vue";
 import StatusBar from "./components/StatusBar.vue";
 import Terminal from "./components/Terminal.vue";
 import About from "./components/About.vue";
+import Project from "./components/Project.vue";
 import Contact from "./components/Contact.vue";
 
 export default {
@@ -31,7 +32,8 @@ export default {
     StatusBar,
     Terminal,
     About,
-    Contact,
+    Project,
+    Contact
   }
 };
 </script>
