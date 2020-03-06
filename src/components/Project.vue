@@ -8,41 +8,79 @@
             v-for="(item, index) in projects"
             :key="index"
           >
-            <img class="folder-icon" :src="folder" alt="" />
+            <img
+              class="folder-icon"
+              :src="folder"
+              alt=""
+              @click="$modal.show(item.modal)"
+            />
             <div>{{ item.title }}</div>
           </li>
         </ul>
+        <band-online />
+        <destination-notification />
+        <dn-a />
+        <tread />
+        <fire-response-system />
+        <limic-x />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+import BandOnline from "./modal/BandOnline.vue";
+import DestinationNotification from "./modal/DestinationNotification.vue";
+import DnA from "./modal/DnA.vue";
+import Tread from "./modal/Tread.vue";
+import FireResponseSystem from "./modal/FireResponseSystem.vue";
+import LimicX from "./modal/LimicX.vue";
+
 export default {
   name: "Project",
   props: {},
+  components: {
+    BandOnline,
+    DestinationNotification,
+    DnA,
+    Tread,
+    FireResponseSystem,
+    LimicX
+  },
+  created() {
+    setInterval(() => {
+      this.modal = !this.modal;
+    }, 5000);
+  },
   data() {
     return {
       show: false,
+      modal: false,
       folder: require("../assets/folder.png"),
       projects: [
         {
-          title: "Band Online"
+          title: "Band Online",
+          modal: "band-online"
         },
         {
-          title: "도착지 알리미"
+          title: "도착지 알리미",
+          modal: "destination-notification"
         },
         {
-          title: "D&A"
+          title: "D&A",
+          modal: "dungeon-adventure"
         },
         {
-          title: "Tread"
+          title: "Tread",
+          modal: "tread"
         },
         {
-          title: "화재 대응 시스템"
+          title: "화재 대응 시스템",
+          modal: "fire-response-system"
         },
         {
-          title: "Limic_X_project"
+          title: "Limic X",
+          modal: "limic-x"
         }
       ]
     };
@@ -53,6 +91,9 @@ export default {
   methods: {
     display() {
       this.show = true;
+    },
+    handleClickButton() {
+      this.visible = !this.visible;
     }
   }
 };
