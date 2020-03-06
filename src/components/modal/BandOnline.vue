@@ -37,7 +37,7 @@
             </li>
           </div>
         </div>
-        <article v-bind="project.description">
+        <article v-bind="project">
           {{ project.description }}
         </article>
       </div>

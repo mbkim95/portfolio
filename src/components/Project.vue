@@ -18,11 +18,11 @@
           </li>
         </ul>
         <band-online />
-        <destination-notification />
+        <!-- <destination-notification />
         <dn-a />
         <tread />
         <fire-response-system />
-        <limic-x />
+        <limic-x /> -->
       </div>
     </transition>
   </div>
@@ -30,22 +30,22 @@
 
 <script>
 import BandOnline from "./modal/BandOnline.vue";
-import DestinationNotification from "./modal/DestinationNotification.vue";
-import DnA from "./modal/DnA.vue";
-import Tread from "./modal/Tread.vue";
-import FireResponseSystem from "./modal/FireResponseSystem.vue";
-import LimicX from "./modal/LimicX.vue";
+// import DestinationNotification from "./modal/DestinationNotification.vue";
+// import DnA from "./modal/DnA.vue";
+// import Tread from "./modal/Tread.vue";
+// import FireResponseSystem from "./modal/FireResponseSystem.vue";
+// import LimicX from "./modal/LimicX.vue";
 
 export default {
   name: "Project",
   props: {},
   components: {
     BandOnline,
-    DestinationNotification,
-    DnA,
-    Tread,
-    FireResponseSystem,
-    LimicX
+    // DestinationNotification,
+    // DnA,
+    // Tread,
+    // FireResponseSystem,
+    // LimicX
   },
   created() {
     setInterval(() => {
