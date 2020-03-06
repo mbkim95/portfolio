@@ -21,10 +21,14 @@
       </div>
       <div id="content">
         <div class="row">
-          <div class="col-md-8">
-            <video src=""></video>
+          <div class="mx-auto my-auto">
+            <youtube
+              :video-id="videoId"
+              player-width="auto"
+              player-height="auto"
+            ></youtube>
           </div>
-          <div class="col-md-4" v-bind="project">
+          <div class="col-md-5" v-bind="project">
             <h5>사용 기술</h5>
             <ul class="list-unstyled">
               <li v-for="(item, index) in project.language" :key="index">
@@ -32,12 +36,10 @@
               </li>
             </ul>
             <h5>개발 인원</h5>
-            <li class="list-unstyled">
-              {{ project.personnel }}명
-            </li>
+            <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article v-bind="project">
+        <article class="mt-4 mb-4" v-bind="project">
           {{ project.description }}
         </article>
       </div>
@@ -50,13 +52,23 @@ export default {
   data() {
     return {
       closeButton: require("../../assets/close.png"),
+      videoId: "videoId",
       project: {
         language: ["Java", "MySQL", "Socket Programming"],
+        videoUrl: "https://youtu.be/tV6mNMTrJLo",
         personnel: 1,
         description:
           "Java와 MySQL와 Socket통신을 활용하여 여러 명의 사용자가 실시간으로 밴드 합주를 할 수 있습니다."
       }
     };
+  },
+  mounted() {
+    this.getVideo(this.project.videoUrl);
+  },
+  methods: {
+    getVideo(url) {
+      this.videoId = this.$youtube.getIdFromURL(url);
+    }
   }
 };
 </script>
