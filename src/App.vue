@@ -47,7 +47,7 @@ export default {
 
 @font-face {
   font-family: Timon;
-  src: url(../fonts/TmonMonsori.ttf);
+  src: url("../fonts/TmonMonsori.ttf");
   unicode-range: U+AC00-D7A3; /* Korean */
 }
 

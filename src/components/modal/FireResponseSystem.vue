@@ -1,6 +1,6 @@
 <template>
   <modal
-    name="band-online"
+    name="fire-response-system"
     transition="nice-modal-fade"
     weight="auto"
     height="auto"
@@ -15,9 +15,9 @@
           id="close_button"
           :src="closeButton"
           alt=""
-          @click="$modal.hide('band-online')"
+          @click="$modal.hide('fire-response-system')"
         />
-        Band Online
+        화재 대응 시스템
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,7 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project">
+        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
           {{ project.description }}
         </article>
       </div>
@@ -48,17 +48,17 @@
 </template>
 <script>
 export default {
-  name: "Band_Online",
+  name: "Fire-Response-System",
   data() {
     return {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
-        language: ["Java", "MySQL", "Socket Programming"],
-        videoUrl: "https://youtu.be/vyzDwr7pivM",
-        personnel: 1,
+        language: ["RaspberryPi", "C", "MQTT Protocol", "Sensors"],
+        videoUrl: "https://youtu.be/uNy8EPgrUy0",
+        personnel: 4,
         description:
-          "Java와 MySQL와 Socket통신을 활용하여 여러 명의 사용자가 실시간으로 밴드 합주를 할 수 있습니다. 일반적인 온라인 서비스들과 유사하게 실시간 채팅, 쪽지 기능을 구현하였습니다."
+          "화재를 감지하여 상황에 맞게 대응하는 시스템입니다. 해당 프로젝트에서 온습도를 감지하고 화재를 감지하는 부분을 맡아 구현하였습니다."
       }
     };
   },
@@ -89,5 +89,10 @@ export default {
 
 #content {
   margin: 10px 10px;
+}
+
+#graph {
+  max-width: 100%;
+  height: auto;
 }
 </style>

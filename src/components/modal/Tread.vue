@@ -1,6 +1,6 @@
 <template>
   <modal
-    name="band-online"
+    name="tread"
     transition="nice-modal-fade"
     weight="auto"
     height="auto"
@@ -15,9 +15,9 @@
           id="close_button"
           :src="closeButton"
           alt=""
-          @click="$modal.hide('band-online')"
+          @click="$modal.hide('tread')"
         />
-        Band Online
+        Tread
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,7 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project">
+        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
           {{ project.description }}
         </article>
       </div>
@@ -48,17 +48,24 @@
 </template>
 <script>
 export default {
-  name: "Band_Online",
+  name: "Tread",
   data() {
     return {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
-        language: ["Java", "MySQL", "Socket Programming"],
-        videoUrl: "https://youtu.be/vyzDwr7pivM",
-        personnel: 1,
+        language: [
+          "Python",
+          "Django",
+          "Vue.js",
+          "BeautifulSoup",
+          "Open API",
+          "..."
+        ],
+        videoUrl: "https://youtu.be/4HzZ81gscnk",
+        personnel: 4,
         description:
-          "Java와 MySQL와 Socket통신을 활용하여 여러 명의 사용자가 실시간으로 밴드 합주를 할 수 있습니다. 일반적인 온라인 서비스들과 유사하게 실시간 채팅, 쪽지 기능을 구현하였습니다."
+          "트렌드 분석 웹 어플리케이션입니다. 해당 어플리케이션은 연령별 실시간 인기 검색어와 검색어와 관련된 각종 정보를 대시보드를 통해 제공해줍니다. 그리고 인기 유튜브 채널의 정보와 키워드별 동영상 실시간 순위를 제공해줍니다. 저는 해당 프로젝트에서 Open API와 Crawling을 통해 데이터를 수집하고 이를 활용하여 WordCloud를 구현하는 부분을 담당하였습니다."
       }
     };
   },

@@ -18,11 +18,11 @@
           </li>
         </ul>
         <band-online />
-        <!-- <destination-notification />
-        <dn-a />
         <tread />
+        <dn-a />
+        <destination-notificator />
         <fire-response-system />
-        <limic-x /> -->
+        <limic-x />
       </div>
     </transition>
   </div>
@@ -30,22 +30,22 @@
 
 <script>
 import BandOnline from "./modal/BandOnline.vue";
-// import DestinationNotification from "./modal/DestinationNotification.vue";
-// import DnA from "./modal/DnA.vue";
-// import Tread from "./modal/Tread.vue";
-// import FireResponseSystem from "./modal/FireResponseSystem.vue";
-// import LimicX from "./modal/LimicX.vue";
+import DestinationNotificator from "./modal/DestinationNotificator.vue";
+import DnA from "./modal/DnA.vue";
+import Tread from "./modal/Tread.vue";
+import FireResponseSystem from "./modal/FireResponseSystem.vue";
+import LimicX from "./modal/LimicX.vue";
 
 export default {
   name: "Project",
   props: {},
   components: {
     BandOnline,
-    // DestinationNotification,
-    // DnA,
-    // Tread,
-    // FireResponseSystem,
-    // LimicX
+    DestinationNotificator,
+    DnA,
+    Tread,
+    FireResponseSystem,
+    LimicX
   },
   created() {
     setInterval(() => {
@@ -64,11 +64,11 @@ export default {
         },
         {
           title: "도착지 알리미",
-          modal: "destination-notification"
+          modal: "destination-notificator"
         },
         {
           title: "D&A",
-          modal: "dungeon-adventure"
+          modal: "dungeon-and-adventure"
         },
         {
           title: "Tread",
