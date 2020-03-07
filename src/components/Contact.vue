@@ -100,6 +100,7 @@ export default {
 li#title {
   color: white;
   background-color: #4c4840;
+  height: 25px;
 }
 
 .fade-enter-active,

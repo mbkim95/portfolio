@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('dungeon-and-adventure')"
         />
-        LimicX
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -54,11 +58,12 @@ export default {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
+        title: "D&A",
         language: ["Java"],
         videoUrl: "https://youtu.be/fXrE9FFP9vs",
         personnel: 1,
         description:
-          "인기 온라인 게임인 'Dungeon & Fighter'를 모방하여 만든 게임으로 Java Swing을 활용하여 구현하였습니다."
+          "인기 온라인 게임인 'Dungeon & Fighter'를 모방하여 만든 액션 게임입니다. \n자바 Swing을 활용하여 자연스러운 움직임을 구현하는 것에 초점을 맞춰 진행하였습니다."
       }
     };
   },
@@ -89,10 +94,5 @@ export default {
 
 #content {
   margin: 10px 10px;
-}
-
-#graph {
-  max-width: 100%;
-  height: auto;
 }
 </style>

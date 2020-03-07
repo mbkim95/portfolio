@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('band-online')"
         />
-        Band Online
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -54,11 +58,12 @@ export default {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
+        title: "Band Online",
         language: ["Java", "MySQL", "Socket Programming"],
         videoUrl: "https://youtu.be/vyzDwr7pivM",
         personnel: 1,
         description:
-          "Java와 MySQL와 Socket통신을 활용하여 여러 명의 사용자가 실시간으로 밴드 합주를 할 수 있습니다. 일반적인 온라인 서비스들과 유사하게 실시간 채팅, 쪽지 기능을 구현하였습니다."
+          "Java와 MySQL와 Socket통신을 활용하여 여러 명의 사용자가 실시간으로 밴드 합주를 할 수 있습니다. 대부분의 온라인 서비스들처럼 실시간 채팅, 쪽지 기능을 구현하였습니다.\n서버는 멀티 스레드 서버로 구현하여 부하를 줄일 수 있도록 하였습니다."
       }
     };
   },

@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('destination-notificator')"
         />
-        도착지 알리미
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -54,11 +58,12 @@ export default {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
+        title: "도착지 알리미",
         language: ["Android", "Java", "Open API", "..."],
         videoUrl: "https://youtu.be/KH2OdR9WpAY",
         personnel: 1,
         description:
-          "사용자가 목적지에 도착하면 알람을 발생시켜 도착지에 도착했음을 알려주는 어플리케이션입니다. GPS와 Network 정보를 통해 사용자의 위치를 파악하여 목적지에 근접하였는지를 감지하도록 구현하였습니다."
+          "사용자가 목적지에 도착하면 알람을 발생시켜 도착지에 도착했음을 알려주는 어플리케이션입니다.\n GPS와 Network 정보를 통해 사용자의 위치를 파악하여 목적지에 근접하였는지를 감지하도록 구현하였습니다."
       }
     };
   },
@@ -89,10 +94,5 @@ export default {
 
 #content {
   margin: 10px 10px;
-}
-
-#graph {
-  max-width: 100%;
-  height: auto;
 }
 </style>

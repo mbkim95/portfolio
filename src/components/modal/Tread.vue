@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('tread')"
         />
-        Tread
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -54,6 +58,7 @@ export default {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
+        title: "Tread",
         language: [
           "Python",
           "Django",
@@ -65,7 +70,7 @@ export default {
         videoUrl: "https://youtu.be/4HzZ81gscnk",
         personnel: 4,
         description:
-          "트렌드 분석 웹 어플리케이션입니다. 해당 어플리케이션은 연령별 실시간 인기 검색어와 검색어와 관련된 각종 정보를 대시보드를 통해 제공해줍니다. 그리고 인기 유튜브 채널의 정보와 키워드별 동영상 실시간 순위를 제공해줍니다. 저는 해당 프로젝트에서 Open API와 Crawling을 통해 데이터를 수집하고 이를 활용하여 WordCloud를 구현하는 부분을 담당하였습니다."
+          "트렌드 분석 웹 어플리케이션입니다. 해당 어플리케이션은 연령별 실시간 인기 검색어와 검색어와 관련된 각종 정보를 대시보드를 통해 제공해줍니다. 그리고 인기 유튜브 채널의 정보와 키워드별 동영상 실시간 순위를 제공해줍니다. \n\n 해당 프로젝트에서 Open API와 Crawling을 통해 데이터를 수집하고 이를 활용하여 WordCloud를 구현하는 부분을 담당하였습니다."
       }
     };
   },

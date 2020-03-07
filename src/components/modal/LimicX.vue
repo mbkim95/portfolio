@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('limic-x')"
         />
-        LimicX
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -40,7 +40,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -56,11 +60,12 @@ export default {
       videoId: "videoId",
       result: require("../../assets/limicX_result.png"),
       project: {
+        title: "Limic X",
         language: ["C", "Limic Library"],
         videoUrl: "https://youtu.be/4HzZ81gscnk",
         personnel: 4,
         description:
-          "MPI 프로그래밍 모델의 노드 내 통신은 메시지 크기가 큰 경우 메모리 매핑 방법을 사용하는데 대표적으로 커널 수준 메모리 영역 방식과 사용자 수준 메모리 영역 방식이 있습니다. 해당 프로젝트에서는 기존의 커널 수준 메모리 영역 방식의 라이브러리인 limic에 사용자 수준 메모리 영역 방식을 추가 구현하고 라이브러리 수준에 캐시를 구현하여 성능을 개선시켰습니다."
+          "MPI 프로그래밍 모델의 노드 내 통신은 메시지 크기가 큰 경우 메모리 매핑 방법을 사용하는데 대표적으로 커널 수준 메모리 영역 방식과 사용자 수준 메모리 영역 방식이 있습니다. \n해당 프로젝트에서는 기존의 커널 수준 메모리 영역 방식의 라이브러리인 limic에 사용자 수준 메모리 영역 방식을 추가 구현하고 라이브러리 수준에 캐시를 구현하여 성능을 개선시켰습니다.\n해당 프로젝트에서 사용자 수준 메모리 영역 방식을 구현하는 부분을 맡아 진행하였습니다."
       }
     };
   },

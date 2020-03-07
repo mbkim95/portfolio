@@ -51,8 +51,24 @@ export default {
   unicode-range: U+AC00-D7A3; /* Korean */
 }
 
+@font-face {
+  font-family: "Recipekorea";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "S-CoreDream-8Heavy";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 #app {
-  font-family: Timon;
+  font-family: S-CoreDream-8Heavy, Timon;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -5,8 +5,8 @@
         <div class="col-lg-2 col-md-2"></div>
         <div class="col-lg-4 col-md-4 my-auto">
           <img :src="profile" class="w-auto img-fluid image" />
-          <h2>김민범</h2>
-          <h5>Kim Min Bum</h5>
+          <h2 class="mt-4">김민범</h2>
+          <h5 class="mb-4">Kim Min Bum</h5>
         </div>
         <div class="col-lg-4 col-md-4 my-auto">
           <div id="career" class="mt-2">&lt;Career></div>

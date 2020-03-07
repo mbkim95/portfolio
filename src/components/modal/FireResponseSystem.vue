@@ -17,7 +17,7 @@
           alt=""
           @click="$modal.hide('fire-response-system')"
         />
-        화재 대응 시스템
+        {{ project.title }}
       </div>
       <div id="content">
         <div class="row">
@@ -39,7 +39,11 @@
             <li class="list-unstyled">{{ project.personnel }}명</li>
           </div>
         </div>
-        <article class="mt-4 mb-4" v-bind="project" style="font-size: 1.2em;">
+        <article
+          class="mt-4 mb-4"
+          v-bind="project"
+          style="white-space:pre-wrap;"
+        >
           {{ project.description }}
         </article>
       </div>
@@ -54,11 +58,12 @@ export default {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
-        language: ["RaspberryPi", "C", "MQTT Protocol", "Sensors"],
+        title: "화재 대응 시스템",
+        language: ["Raspberry Pi", "C", "MQTT Protocol", "Sensors"],
         videoUrl: "https://youtu.be/uNy8EPgrUy0",
         personnel: 4,
         description:
-          "화재를 감지하여 상황에 맞게 대응하는 시스템입니다. 해당 프로젝트에서 온습도를 감지하고 화재를 감지하는 부분을 맡아 구현하였습니다."
+          "라즈베리파이와 각종 센서 및 MQTT 프로토콜을 활용하여 구현한 화재 대응 시스템입니다. 방에 사람이 있는지 없는지에 따라서 문을 다르게 제어하고 화재 정보를 수집하여 전송할 수 있도록 구현하였습니다.\n\n해당 프로젝트에서 온습도를 주기적으로 측정하고 화재를 감지하는 부분과 측정한 결과를 메인 라즈베리파이에 전송하는 부분을 맡아 구현하였습니다."
       }
     };
   },
@@ -89,10 +94,5 @@ export default {
 
 #content {
   margin: 10px 10px;
-}
-
-#graph {
-  max-width: 100%;
-  height: auto;
 }
 </style>
