@@ -45,6 +45,12 @@ export default {
           link: "https://www.github.com/mbkim95"
         },
         {
+          key: "Blog",
+          icon: require("../assets/blog.png"),
+          value: "dev-mb",
+          link: "https://dev-mb.tistory.com/"
+        },
+        {
           key: "Instagram",
           icon: require("../assets/instagram.png"),
           value: "_minbum_",
