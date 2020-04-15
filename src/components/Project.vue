@@ -30,7 +30,7 @@
 
 <script>
 import BandOnline from "./modal/BandOnline.vue";
-import DestinationNotificator from "./modal/DestinationNotificator.vue";
+// import DestinationNotificator from "./modal/DestinationNotificator.vue";
 import DnA from "./modal/DnA.vue";
 import Tread from "./modal/Tread.vue";
 import FireResponseSystem from "./modal/FireResponseSystem.vue";
@@ -41,7 +41,7 @@ export default {
   props: {},
   components: {
     BandOnline,
-    DestinationNotificator,
+    // DestinationNotificator,
     DnA,
     Tread,
     FireResponseSystem,
@@ -62,10 +62,10 @@ export default {
           title: "Band Online",
           modal: "band-online"
         },
-        {
-          title: "도착지 알리미",
-          modal: "destination-notificator"
-        },
+        // {
+        //   title: "도착지 알리미",
+        //   modal: "destination-notificator"
+        // },
         {
           title: "D&A",
           modal: "dungeon-and-adventure"
