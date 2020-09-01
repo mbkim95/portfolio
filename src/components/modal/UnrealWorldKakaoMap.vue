@@ -1,6 +1,6 @@
 <template>
   <modal
-    name="fire-response-system"
+    name="unreal-world-kakao-map"
     transition="nice-modal-fade"
     weight="auto"
     height="auto"
@@ -15,7 +15,7 @@
           id="close_button"
           :src="closeButton"
           alt=""
-          @click="$modal.hide('fire-response-system')"
+          @click="$modal.hide('unreal-world-kakao-map')"
         />
         {{ project.title }}
       </div>
@@ -52,18 +52,18 @@
 </template>
 <script>
 export default {
-  name: "Fire_Response_System",
+  name: "Unreal_World_Kakao_Map",
   data() {
     return {
       closeButton: require("../../assets/close.png"),
       videoId: "videoId",
       project: {
-        title: "화재 대응 시스템",
-        language: ["Raspberry Pi", "C", "MQTT Protocol", "Sensors"],
-        videoUrl: "https://youtu.be/uNy8EPgrUy0",
-        personnel: 4,
+        title: "이세계의 카카오맵",
+        language: ["Android", "Kotlin", "Coroutine", "Kakao API", "AAC", "Firebase", "..."],
+        videoUrl: "https://youtu.be/e35WzdybM4E",
+        personnel: 2,
         description:
-          "라즈베리파이와 각종 센서 및 MQTT 프로토콜을 활용하여 구현한 화재 대응 시스템입니다. 방에 사람이 있는지 없는지에 따라서 문을 다르게 제어하고 화재 정보를 수집하여 전송할 수 있도록 구현하였습니다.\n\n해당 프로젝트에서 온습도를 주기적으로 측정하고 화재를 감지하는 부분과 측정한 결과를 메인 라즈베리파이에 전송하는 부분을 맡아 구현하였습니다."
+          "친구들과 손쉽게 맛집 리스트 공유 컨셉으로 구현된 카카오맵 엔진 기반 안드로이드 지도 어플리케이션입니다. 장소 검색을 통해서 사용자가 원하는 장소를 검색하고 상세정보를 보여줍니다. 사용자가 원하는 장소를 북마크하면 지도에 마커가 생성되고 북마크 리스트에 추가되어 손쉽게 확인할 수 있습니다. 그리고 북마크 공유하기 기능을 통해서 친구들과 서로의 북마크 목록을 실시간으로 공유할 수 있습니다. 또한, 앱을 삭제하거나 사용기기를 변경하더라도 기존의 카카오 아이디로 로그인한다면 이전에 추가한 북마크 목록, 친구 목록을 이어서 사용할 수 있습니다."
       }
     };
   },

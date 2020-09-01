@@ -18,6 +18,7 @@
           </li>
         </ul>
         <band-online />
+        <unreal-world-kakao-map/>
         <tread />
         <dn-a />
         <destination-notificator />
@@ -30,6 +31,7 @@
 
 <script>
 import BandOnline from "./modal/BandOnline.vue";
+import UnrealWorldKakaoMap from "./modal/UnrealWorldKakaoMap.vue";
 // import DestinationNotificator from "./modal/DestinationNotificator.vue";
 import DnA from "./modal/DnA.vue";
 import Tread from "./modal/Tread.vue";
@@ -41,6 +43,7 @@ export default {
   props: {},
   components: {
     BandOnline,
+    UnrealWorldKakaoMap,
     // DestinationNotificator,
     DnA,
     Tread,
@@ -61,6 +64,10 @@ export default {
         {
           title: "Band Online",
           modal: "band-online"
+        },
+        {
+          title: "이세계의 카카오맵",
+          modal: "unreal-world-kakao-map"
         },
         // {
         //   title: "도착지 알리미",

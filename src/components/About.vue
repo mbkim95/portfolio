@@ -39,19 +39,25 @@ export default {
       profile: require("../assets/profile.png"),
       careers: [
         {
-          name: "LINE PLUS",
+          name: "<KAKAO>",
+          detail: "맵 서비스팀 인턴",
+          job: "안드로이드 개발",
+          date: "2020/07 ~ 2020/08"
+        },
+        {
+          name: "<LINE PLUS>",
           detail: "메인 클라이언트팀 인턴",
           job: "안드로이드 개발",
           date: "2019/10 ~ 2019/12"
         },
         {
-          name: "사고링크",
+          name: "<사고링크>",
           detail: "개발팀 인턴",
           job: "프론트엔드 개발",
           date: "2019/06 ~ 2019/08"
         },
         {
-          name: "건국대학교",
+          name: "<건국대학교>",
           detail: "컴퓨터공학과",
           job: "",
           date: "2014/03 ~ 2020/02"
